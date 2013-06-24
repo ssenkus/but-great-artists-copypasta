@@ -11,30 +11,30 @@ function getSelectedText() {
 function doSomethingWithSelectedText() {
     var selectedText = getSelectedText();
     if (selectedText) {
-  // DISABLED      alert("SELECTED TEXT: \n\"" + selectedText + "\"");
+        return selectedText;
     }
 }
 
 function click_handler(ev) {
+    //alert(ev.type);
     var rect = this.getBoundingClientRect();
     var left = ev.clientX - rect.left - this.clientLeft + this.scrollLeft;
     var top = ev.clientY - rect.top - this.clientTop + this.scrollTop;
-
-    console.log('left: ' + left + '\ntop: ' + top);
+    var selectedContent = doSomethingWithSelectedText();
+    $('#results-container').append('<b>event type: </b>' + ev.type + ' <b>left:</b> ' + left + ' <b>top:</b> ' + top + '\n');
+    if (ev.type === "mouseup" && selectedContent) {
+        $('#results-container').append('<b>selected content:</b><span class="selected-content">' + selectedContent + '</span>\n\n');
+    }
     var dot = document.createElement('div');
-    dot.setAttribute('style', 'position:absolute; width: 2px; height: 2px; top: '+top+'px; left: '+left+'px; background: red;');
+    dot.setAttribute('style', 'position:absolute; color: #000; width: 5px; height: 5px; top: '+top+'px; left: '+left+'px; background: red; border:1px solid red; border-radius: 10px;');
     this.appendChild(dot);
 }
 
-
-
-document.onmouseup = doSomethingWithSelectedText;
-document.onkeyup = doSomethingWithSelectedText;
-
-$(document).ready(function() {
+ $(document).ready(function() {
     var watchElemID = document.getElementById("content");
     console.log(watchElemID);    
-    watchElemID.addEventListener('click', click_handler, false);
+    watchElemID.addEventListener('mousedown', click_handler, false);
+    watchElemID.addEventListener('mouseup', click_handler, false);
     
 });
 

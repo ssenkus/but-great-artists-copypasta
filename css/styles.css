@@ -15,8 +15,8 @@ html, body {
 
 
 div#content {
-//    margin-left: 11em;
-//    padding: 1.25em 1.5em 1.5em;
+/*    margin-left: 11em; */
+   padding: 1.25em 1.5em 1.5em; 
 }
 div#content {
     line-height: 1.5em;
@@ -51,4 +51,30 @@ h1, h2, h3, h4, h5, h6 {
     padding-top: 0.5em;
     padding-bottom: 0.17em;
     border-bottom: 1px solid rgb(170, 170, 170);
+}
+
+#results {
+    background-color: #bdf;
+    width: inherit;
+    height: 500px;
+    padding: 10px;
+    border-top: 2px solid #007;
+    
+}
+
+#results-container {
+    background-color: #fafafa;
+    
+}
+
+pre b {
+    font-family: Arial;
+    
+}
+
+.selected-content {
+    background-color: #007;
+    color: #fff;
+    display: block;
+    width: auto;
 }
