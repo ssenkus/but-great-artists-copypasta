@@ -1,0 +1,31 @@
+/* 
+    Document   : styles
+    Created on : Jun 23, 2013, 11:16:49 PM
+    Author     : steveo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+html, body {
+    font-family: sans-serif;
+    font-size: 1em;
+}
+
+h1 {
+    
+    
+}
+
+#firstHeading {
+    font-size: 1.6em;
+}
+.firstHeading, #firstHeading {
+    line-height: 1.2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: black;
+    font-weight: normal;
+}
+
+
