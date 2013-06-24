@@ -23,7 +23,7 @@ function click_handler(ev) {
     var selectedContent = doSomethingWithSelectedText();
     $('#results-container').append('<b>event type: </b>' + ev.type + ' <b>left:</b> ' + left + ' <b>top:</b> ' + top + '\n');
     if (ev.type === "mouseup" && selectedContent) {
-        $('#results-container').append('<b>selected content:</b><span class="selected-content">' + selectedContent + '</span>\n\n');
+        $('#results-container').append('<b>selected content:</b><p class="selected-content">' + selectedContent + '</p>\n\n');
     }
     var dot = document.createElement('div');
     dot.setAttribute('style', 'position:absolute; color: #000; width: 5px; height: 5px; top: '+top+'px; left: '+left+'px; background: red; border:1px solid red; border-radius: 10px;');
